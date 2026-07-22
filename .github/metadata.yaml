@@ -1,0 +1,10 @@
+# .github/metadata.yaml
+description: "Swift implementation of Git repository, reference, and status formats."
+topics:
+  - standards
+  - git
+  - version-control
+homepage: "https://swift-institute.org"
+visibility: private
+readme:
+  family: E
