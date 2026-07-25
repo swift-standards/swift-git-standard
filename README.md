@@ -31,7 +31,18 @@ dependencies: [
 ]
 ```
 
-Use the `Git Standard` product and import `Git_Standard`.
+Add the product to your target:
+
+```swift
+.target(
+    name: "App",
+    dependencies: [
+        .product(name: "Git Standard", package: "swift-git-standard")
+    ]
+)
+```
+
+Then `import Git_Standard`.
 
 ### Requirements
 
