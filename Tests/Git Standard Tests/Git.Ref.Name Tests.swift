@@ -11,7 +11,10 @@ extension Git.Ref.Name {
             #expect(name.rawValue == "refs/heads/main")
         }
 
-        @Test(arguments: ["main", "refs//main", "refs/.main", "refs/main.lock", "refs/main..next", "refs/main\\next"])
+        @Test(arguments: [
+            "main", "refs//main", "refs/.main", "refs/main.lock", "refs/main..next",
+            "refs/main\\next",
+        ])
         func `invalid reference is rejected`(_ value: String) {
             #expect(throws: Git.Ref.Name.Error.self) {
                 try Git.Ref.Name(value)

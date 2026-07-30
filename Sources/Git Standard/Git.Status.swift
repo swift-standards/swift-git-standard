@@ -22,16 +22,19 @@ extension Git {
                 }
 
                 let pathStart = bytes.index(after: space)
-                guard let pathEnd = bytes[pathStart...].firstIndex(of: 0), pathStart != pathEnd else {
+                guard let pathEnd = bytes[pathStart...].firstIndex(of: 0), pathStart != pathEnd
+                else {
                     throw .path(pathStart)
                 }
                 let path = Array(bytes[pathStart..<pathEnd])
                 start = bytes.index(after: pathEnd)
 
-                let moved = index == .renamed || index == .copied || tree == .renamed || tree == .copied
+                let moved =
+                    index == .renamed || index == .copied || tree == .renamed || tree == .copied
                 let origin: [UInt8]?
                 if moved {
-                    guard let originEnd = bytes[start...].firstIndex(of: 0), start != originEnd else {
+                    guard let originEnd = bytes[start...].firstIndex(of: 0), start != originEnd
+                    else {
                         throw .path(start)
                     }
                     origin = Array(bytes[start..<originEnd])

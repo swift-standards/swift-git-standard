@@ -17,7 +17,9 @@ extension Git.Ref {
                 let end = bytes[start...].firstIndex(of: 10) ?? bytes.endIndex
                 let line = bytes[start..<end]
                 if !line.isEmpty {
-                    guard let tab = line.firstIndex(of: 9), line[line.index(after: tab)...].firstIndex(of: 9) == nil else {
+                    guard let tab = line.firstIndex(of: 9),
+                        line[line.index(after: tab)...].firstIndex(of: 9) == nil
+                    else {
                         throw .syntax(start)
                     }
                     let objectText = String(decoding: line[..<tab], as: UTF8.self)
