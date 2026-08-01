@@ -17,7 +17,11 @@ extension Git.Object {
         }
 
         public init?(rawValue: String) {
-            try? self.init(rawValue)
+            do throws(Error) {
+                try self.init(rawValue)
+            } catch {
+                return nil
+            }
         }
     }
 }
