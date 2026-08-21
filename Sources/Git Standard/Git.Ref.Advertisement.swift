@@ -1,5 +1,5 @@
 extension Git.Ref {
-    /// One `<oid> TAB <ref> LF` record emitted by `git ls-remote --refs`.
+
     public struct Advertisement: Sendable, Equatable {
         public let object: Git.Object.ID
         public let name: Git.Ref.Name

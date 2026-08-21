@@ -8,8 +8,7 @@ extension Git.Ref.Name {
         @Test
         func `qualified reference is accepted`() throws {
             let name = try Git.Ref.Name("refs/heads/main")
-            // swift-linter:disable:next raw value access
-            // REASON: same-package test asserting the parsed name's wire value.
+
             #expect(name.rawValue == "refs/heads/main")
         }
 

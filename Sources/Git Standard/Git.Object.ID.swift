@@ -1,5 +1,5 @@
 extension Git.Object {
-    /// A hexadecimal SHA-1 or SHA-256 Git object identifier.
+
     public struct ID: Sendable, Equatable, Hashable, RawRepresentable {
         public let rawValue: String
 

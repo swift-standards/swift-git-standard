@@ -1,5 +1,5 @@
 extension Git.Ref {
-    /// A fully qualified Git reference name.
+
     public struct Name: Sendable, Equatable, Hashable, RawRepresentable {
         public let rawValue: String
 

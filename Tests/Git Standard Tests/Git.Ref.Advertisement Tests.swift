@@ -11,8 +11,7 @@ extension Git.Ref.Advertisement {
             let records = try Git.Ref.Advertisement.parse(bytes)
 
             #expect(records.count == 1)
-            // swift-linter:disable:next raw value access
-            // REASON: same-package test asserting the parsed name's wire value.
+
             #expect(records.first?.name.rawValue == "refs/heads/main")
         }
 

@@ -1,5 +1,5 @@
 extension Git {
-    /// Git porcelain status version 1 in NUL-delimited machine form.
+
     public enum Status: Sendable {}
 }
 
