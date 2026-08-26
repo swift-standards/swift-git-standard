@@ -19,7 +19,7 @@ for entry in entries {
 }
 ```
 
-The package models bytes and state only. Executing Git belongs to [swift-git](https://github.com/swift-foundations/swift-git).
+The package models bytes and state only. Executing Git belongs to [swift-git](https://github.com/swift-compositions/swift-git).
 
 ---
 
