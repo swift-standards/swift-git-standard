@@ -18,21 +18,21 @@ let package = Package(
         .target(name: "Git Standard"),
         .testTarget(
             name: "Git Standard Tests",
-            dependencies: ["Git Standard"]
+            dependencies: [.target(name: "Git Standard")]
         ),
     ],
     swiftLanguageModes: [.v6]
 )
 
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
-    target.swiftSettings =
-        (target.swiftSettings ?? []) + [
-            .strictMemorySafety(),
-                .enableExperimentalFeature("Lifetimes"),
-                .enableUpcomingFeature("ExistentialAny"),
-            .enableUpcomingFeature("InferIsolatedConformances"),
-            .enableUpcomingFeature("InternalImportsByDefault"),
-                .enableUpcomingFeature("MemberImportVisibility"),
-            .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
-        ]
+    target.swiftSettings = (target.swiftSettings ?? []) + [
+        .strictMemorySafety(),
+        .enableUpcomingFeature("ExistentialAny"),
+        .enableUpcomingFeature("InternalImportsByDefault"),
+        .enableUpcomingFeature("MemberImportVisibility"),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+        .enableUpcomingFeature("InferIsolatedConformances"),
+        .enableExperimentalFeature("Lifetimes"),
+        .treatAllWarnings(as: .error),
+    ]
 }
