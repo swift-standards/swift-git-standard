@@ -2,7 +2,9 @@ import Testing
 
 @testable import Git_Standard
 
-extension Git.Status {
+enum `Git.Status Tests` {}
+
+extension `Git.Status Tests` {
     @Suite
     struct Test {
         @Test

@@ -2,7 +2,9 @@ import Testing
 
 @testable import Git_Standard
 
-extension Git.Ref.Advertisement {
+enum `Git.Ref.Advertisement Tests` {}
+
+extension `Git.Ref.Advertisement Tests` {
     @Suite
     struct Test {
         @Test
