@@ -10,4 +10,4 @@ Use this package when you already have bytes that Git printed and need them as v
 - Every parse error carries the byte offset where the problem starts.
 - `Git.Object.ID` is 40 or 64 hexadecimal digits, so both SHA-1 and SHA-256 IDs are accepted. Upper and lower case are both accepted and kept as given.
 - `Git.Ref.Name` follows the rules of `git check-ref-format` and also needs at least one slash, so a short name such as `main` is refused while `refs/heads/main` is accepted. Non-ASCII names are accepted.
-- Because `^` can't appear in a reference name, a peeled tag line from a remote, whose name ends in ^{}, makes `Git.Ref.Advertisement.parse(_:)` fail.
+- A peeled tag line from a remote, whose name ends in `^{}`, parses as a record under the tag's name with `isPeeled` set; its object is what the annotated tag points to.
